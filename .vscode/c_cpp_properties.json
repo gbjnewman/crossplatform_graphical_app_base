@@ -1,0 +1,13 @@
+{
+    "configurations": [
+        {
+            "name": "Windows",
+            "includePath": [
+                "${workspaceFolder}/SDL3/include"
+            ],
+            "intelliSenseMode": "windows-msvc-x64",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}
