@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.20)
 
 project(crossplatform_graphical_app_base LANGUAGES C CXX)
 
+# GENERATE COMPILATION DATABASE FOR CLANGD
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # SDL CONFIGURATION
 

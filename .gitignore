@@ -1,4 +1,3 @@
-
 # CMake build directories
 /build/
 /cmake-build-*/
@@ -10,22 +9,6 @@ cmake_install.cmake
 compile_commands.json
 Testing/
 install_manifest.txt
-
-# Compiler and linker output
-*.obj
-*.o
-*.pdb
-*.ilk
-*.idb
-*.pch
-*.ipch
-*.exe
-*.dll
-*.lib
-*.a
-*.so
-*.so.*
-*.dylib
 
 # Visual Studio
 .vs/
