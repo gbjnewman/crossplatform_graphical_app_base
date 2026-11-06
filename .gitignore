@@ -1,0 +1,38 @@
+
+# CMake build directories
+/build/
+/cmake-build-*/
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+Testing/
+install_manifest.txt
+
+# Compiler and linker output
+*.obj
+*.o
+*.pdb
+*.ilk
+*.idb
+*.pch
+*.ipch
+*.exe
+*.dll
+*.lib
+*.a
+*.so
+*.so.*
+*.dylib
+
+# Visual Studio
+.vs/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Local CMake configuration
+CMakeUserPresets.json

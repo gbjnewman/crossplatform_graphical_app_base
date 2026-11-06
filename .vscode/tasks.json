@@ -1,24 +1,49 @@
+
 {
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build Game",
-            "type": "shell",
-            "command": "build.bat",
+            "label": "Configure CMake",
+            "type": "process",
+            "command": "cmake",
+            "args": [
+                "-S", ".",
+                "-B", "build/windows"
+            ],
             "options": {
-                "cwd": "${workspaceFolder}",
-                "shell": {
-                    "executable": "cmd.exe",
-                    "args": [
-                        "/d",
-                        "/c"
-                    ]
-                }
+                "cwd": "${workspaceFolder}"
             },
+            "linux": {
+                "args": [
+                    "-S", ".",
+                    "-B", "build/linux",
+                    "-DCMAKE_BUILD_TYPE=Debug"
+                ]
+            }
+        },
+        {
+            "label": "Build Game",
+            "type": "process",
+            "command": "cmake",
+            "args": [
+                "--build", "build/windows",
+                "--config", "Debug"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "Configure CMake",
+            "dependsOrder": "sequence",
             "problemMatcher": "$msCompile",
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "linux": {
+                "args": [
+                    "--build", "build/linux"
+                ],
+                "problemMatcher": "$gcc"
             }
         }
     ]
