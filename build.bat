@@ -9,6 +9,7 @@ REM CHECK WHETHER THE MICROSOFT C/C++ COMPILER IS AVAILABLE
 where cl >nul 2>nul
 
 if %ERRORLEVEL% EQU 0 (
+    echo MSVC compiler is already available.
     goto compiler_ready
 )
 
@@ -58,6 +59,8 @@ if %ERRORLEVEL% NEQ 0 (
     echo ERROR: Visual Studio environment loaded, but cl.exe is still unavailable.
     exit /b 1
 )
+
+echo MSVC x64 build environment initialized successfully.
 
 :compiler_ready
 
