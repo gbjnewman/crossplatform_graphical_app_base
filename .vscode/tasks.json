@@ -1,50 +1,17 @@
-
 {
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Configure CMake",
-            "type": "process",
-            "command": "cmake",
-            "args": [
-                "-S", ".",
-                "-B", "build/windows"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "linux": {
-                "args": [
-                    "-S", ".",
-                    "-B", "build/linux",
-                    "-DCMAKE_BUILD_TYPE=Debug"
-                ]
-            }
-        },
-        {
+            "type": "cmake",
             "label": "Build Game",
-            "type": "process",
-            "command": "cmake",
-            "args": [
-                "--build", "build/windows",
-                "--config", "Debug"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "dependsOn": "Configure CMake",
-            "dependsOrder": "sequence",
-            "problemMatcher": "$msCompile",
+            "command": "build",
+            "preset": "${command:cmake.activeBuildPresetName}",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "linux": {
-                "args": [
-                    "--build", "build/linux"
-                ],
-                "problemMatcher": "$gcc"
-            }
+            "problemMatcher": [],
+            "detail": "Build using the active CMake build preset"
         }
     ]
 }
